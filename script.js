@@ -1,8 +1,27 @@
 // script.js
 
 function openBrowser(browser) {
-    // Magic happens here to load the chosen browser content dynamically
-    // You can use AJAX, fetch, or other techniques to load content based on the browser chosen
-    // For now, let's just display a message
-    document.getElementById('browser-display').innerHTML = `<p>You've entered the magical realm of ${browser}!</p>`;
+    let message;
+
+    switch (browser) {
+        case 'chrome':
+            message = "We don't have that.";
+            break;
+        case 'firefox':
+            message = "Sorry, but we cannot access that.";
+            break;
+        case 'tor':
+            message = "Got it! Launching Tor and connecting. This may take a while...";
+            // Additional code to launch Tor can be added here
+            break;
+        case 'hackweb':
+            message = "Launching Hack Web.";
+            // Additional code for Hack Web can be added here
+            break;
+        default:
+            message = "Invalid browser selection.";
+            break;
+    }
+
+    document.getElementById('browser-display').innerHTML = `<p>${message}</p>`;
 }
